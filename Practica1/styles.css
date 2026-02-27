@@ -54,3 +54,40 @@ th, td {
 body{
     background-color: lightblue;
 }
+
+.caja {
+    width: 200px;
+    height: 200px;
+    background-color: #4CAF50; /* Verde */
+    margin: 20px; /* Margen exterior */
+    padding: 15px; /* Relleno interior */
+    border: 5px solid #333; /* Borde */
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho y alto */
+}
+.caja-1 {
+    width: 150px;
+    height: 150px;
+    background-color: #FF5722; /* Naranja */
+    margin: 10px;
+    padding: 20px;
+    border: 3px dashed #000;
+    box-sizing: border-box;
+}
+.caja-2 {
+    width: 100px;
+    height: 100px;
+    background-color: #2196F3; /* Azul */
+    margin: 30px;
+    padding: 5px;
+    border: 1px solid #FFF;
+    box-sizing: content-box; /* El borde y el relleno no se incluyen en el tamaño */
+}
+.caja-3 {
+    width: 250px;
+    height: 250px;
+    background-color: #FFC107; /* Amarillo */
+    margin: 5px;
+    padding: 10px;
+    border: 4px double #000;
+    box-sizing: border-box;
+}
