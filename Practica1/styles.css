@@ -2,6 +2,7 @@ body {
     font-family: Verdana;
     margin: 0;
     padding: 20px;
+    background-color: lightgray;
 }
 
 h1, h2 {
@@ -49,10 +50,6 @@ th, td {
 
 .btn:hover {
     background-color: #0056b3;
-}
-
-body{
-    background-color: lightblue;
 }
 
 .caja {
