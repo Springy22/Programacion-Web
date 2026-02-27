@@ -67,4 +67,33 @@
             </form>
         </div>
     </body>
+    <style>
+        /* Media query para pantallas pequeñas (celulares) */
+        @media (max-width: 576px){
+            body{
+                /* Color de fondo se cambiará para medidas pequeñas */
+                background-color: #f8f9fa;
+            }
+            form{
+                background-color: #f8f9fa;
+            }
+            h2{
+                /* Titulo de otro color y más pequeño para tamaño más pequeño*/
+                font-size: 1.5rem;
+                color:rgb(65, 66, 68);
+            }
+        }
+
+        /* Media query para pantallas grandes (PC o laptop) */
+        @media (min-width: 992px){
+            form{
+                max-width: 600px; /* ancho máximo */
+                margin: auto; /* centrado */
+            }
+            h2{
+                /* Color de encabezado para tamaño mayor */
+                color:rgb(39,82,16);
+            }
+        }
+    </style>
 </html>
