@@ -10,7 +10,7 @@
     <body>
         <div class="container mt-5">
             <h2 class="mb-4 text-center">Registro de Usuario</h2>
-            <form class="p-4 shadow rounded bg-white">
+            <form class="p-4 shadow rounded">
                 <!--Datos personales-->
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre completo</label>
@@ -77,6 +77,9 @@
             form{
                 background-color: #f8f9fa;
             }
+            form .form-control, form .form-select{
+                background-color: #e9ecef;
+            }
             h2{
                 /* Titulo de otro color y más pequeño para tamaño más pequeño*/
                 font-size: 1.5rem;
@@ -89,6 +92,10 @@
             form{
                 max-width: 600px; /* ancho máximo */
                 margin: auto; /* centrado */
+                background-color:#d1e7dd;
+            }
+            form .form-control, form .form-select{
+                background-color: #f8fff9;
             }
             h2{
                 /* Color de encabezado para tamaño mayor */
