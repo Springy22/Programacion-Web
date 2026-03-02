@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Agregar Elemento</title>
+    </head>
+    <body>
+        <ul id="lista">
+            <li>Elemento1</li>
+            <li>Elemento2</li>
+        </ul>
+        <button id="agregar">Agregar Elemento</button>
+
+        <script>
+            document.getElementById('agregar').onclick = function(){
+                const nuevoElemento = document.createElement('li');
+                nuevoElemento.textContent = 'Elemento Nuevo';
+                document.getElementById('lista').appendChild(nuevoElemento);
+            };
+        </script>
+    </body>
+</html>
