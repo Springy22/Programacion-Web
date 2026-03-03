@@ -18,6 +18,8 @@
         </style>
     </head>
     <body>
+        <h1 id="titulo">¡Hola, Munndo!</h1>
+        <button id="cambiar">Cambiar Titulo</button>
         <br>
         <ul id="lista">
             <li>Elemento1</li>
@@ -60,7 +62,11 @@
                     cuadro.classList.add ('cuadro');
                 }
                 */
-            }
+            };
+
+            document.getElementById('inputTexto').addEventListener('input', function(event){
+                document.getElementById('resultado').textContent=event.target.value;
+            });
         </script>
     </body>
 </html>
