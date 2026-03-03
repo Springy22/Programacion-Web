@@ -3,13 +3,41 @@
     <head>
         <meta charset="UTF-8">
         <title>Agregar Elemento</title>
+        <style>
+            .cuadro{
+                width: 100px;
+                height: 100px;
+                background-color: red;
+            }
+
+            .cuadro-grande{
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+        </style>
     </head>
     <body>
+        <br>
         <ul id="lista">
             <li>Elemento1</li>
             <li>Elemento2</li>
+            <li>Elemento3</li>
+            <li>Elemento4</li>
         </ul>
         <button id="agregar">Agregar Elemento</button>
+        <button id="eliminar">Eliminar Elemento</button>
+
+        <br>
+        <br>
+        <div id="cuadro" class="cuadro"></div>
+        <br>
+        <button id="cambiarEstilo">Cambiar Estilo</button>
+        <br>
+        <br>
+        <input type="text" id="inputTexto" placeholder="Escribe algo...">
+        <p id="resultado"></p>
+        <br>
 
         <script>
             document.getElementById('agregar').onclick = function(){
@@ -17,6 +45,22 @@
                 nuevoElemento.textContent = 'Elemento Nuevo';
                 document.getElementById('lista').appendChild(nuevoElemento);
             };
+
+            document.getElementById('cuadro').onclick = function(){
+                const cuadro = document.getElementById('cuadro');
+
+                cuadro.classList.toggle('cuadro-grande');
+                /*
+                if(cuadro.classList.contains ('cuadro')){
+                    cuadro.classList.remove ('cuadro');
+                    cuadro.classList.add ('cuadro-grande');
+                }
+                else{
+                    cuadro.classList.remove ('cuadro-grande');
+                    cuadro.classList.add ('cuadro');
+                }
+                */
+            }
         </script>
     </body>
 </html>
