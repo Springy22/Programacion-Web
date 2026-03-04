@@ -28,7 +28,9 @@
             <li>Elemento4</li>
         </ul>
         <button id="agregar">Agregar Elemento</button>
-        <button id="eliminar">Eliminar Elemento</button>
+        <button id="eliminar">Eliminar Ultimo Elemento</button>
+        <input type="text" id="inputElemento" placeholder="Escriba el elemento:">
+        <button id="eliminarEspecifico">Eliminar Elemento</button>
 
         <br>
         <br>
@@ -42,6 +44,13 @@
         <br>
 
         <script>
+            document.getElementById('cambiar').onclick = function(){
+                if(document.getElementById('titulo').textContent == '¡Hola, JavaScript!')
+                    document.getElementById('titulo').textContent = '¡Hola, Mundo!';
+                else
+                    document.getElementById('titulo').textContent = '¡Hola, JavaScript!';
+            };
+
             document.getElementById('agregar').onclick = function(){
                 let nuevoElemento = document.createElement('li');
                 let pos = document.getElementById('lista').children.length+1;
@@ -75,6 +84,14 @@
             document.getElementById('inputTexto').addEventListener('input', function(event){
                 document.getElementById('resultado').textContent=event.target.value;
             });
+
+            document.getElementById('eliminarEspecifico').onclick = function(){
+                for(i = 0; i < document.childElementCount('lista'); i++){
+                    if(document.textContent('inputTexto') == document.childNodes(i)){
+                        document.removeChild(i)
+                    }
+                }
+            };
         </script>
     </body>
 </html>
