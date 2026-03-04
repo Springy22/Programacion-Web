@@ -18,7 +18,7 @@
         </style>
     </head>
     <body>
-        <h1 id="titulo">¡Hola, Munndo!</h1>
+        <h1 id="titulo">¡Hola, Mundo!</h1>
         <button id="cambiar">Cambiar Titulo</button>
         <br>
         <ul id="lista">
@@ -93,7 +93,7 @@
 
 
                 for(let i = elementos.length - 1; i >= 0; i--){
-                    if (elementos[i].textContent === textoBuscado){
+                    if (elementos[i].textContent == textoBuscado){
                         lista.removeChild(elementos[i]);
                     }
                 }
