@@ -49,6 +49,13 @@
                 document.getElementById('lista').appendChild(nuevoElemento);
             };
 
+            document.getElementById('eliminar').onclick = function(){
+                const lista = document.getElementById('lista');
+                if (lista.lastChild){
+                    lista.removeChild(lista.lastElementChild);
+                }
+            };
+
             document.getElementById('cuadro').onclick = function(){
                 const cuadro = document.getElementById('cuadro');
 
