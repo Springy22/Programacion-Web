@@ -29,6 +29,7 @@
         </ul>
         <button id="agregar">Agregar Elemento</button>
         <button id="eliminar">Eliminar Ultimo Elemento</button>
+        <br>
         <input type="text" id="inputElemento" placeholder="Escriba el elemento:">
         <button id="eliminarEspecifico">Eliminar Elemento</button>
 
@@ -86,11 +87,15 @@
             });
 
             document.getElementById('eliminarEspecifico').onclick = function(){
-                for(i = 0; i < document.childElementCount('lista'); i++){
-                    if(document.textContent('inputTexto') == document.childNodes(i)){
-                        document.removeChild(i)
+                const textoBuscado = document.getElementById('inputElemento').value.trim();
+                const listaTemp = document.getElementById('lista');
+                const elementos = lista.getElementByTagName('li');
+
+
+                for(let i = elementos.length - 1; i >= 0; i--){
+                    if (elementos[i].textContent === textoBuscado){
+                        lista.removeChild(elementos[i]);
                     }
-                }
             };
         </script>
     </body>
