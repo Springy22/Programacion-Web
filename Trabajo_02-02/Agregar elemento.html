@@ -43,8 +43,9 @@
 
         <script>
             document.getElementById('agregar').onclick = function(){
-                const nuevoElemento = document.createElement('li');
-                nuevoElemento.textContent = 'Elemento Nuevo';
+                let nuevoElemento = document.createElement('li');
+                let pos = document.getElementById('lista').children.length+1;
+                nuevoElemento.textContent = "Elemento"+pos;
                 document.getElementById('lista').appendChild(nuevoElemento);
             };
 
