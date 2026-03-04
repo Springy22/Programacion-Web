@@ -87,16 +87,24 @@
             });
 
             document.getElementById('eliminarEspecifico').onclick = function(){
+                // 1. Obtenemos el texto del input
                 const textoBuscado = document.getElementById('inputElemento').value.trim();
-                const listaTemp = document.getElementById('lista');
-                const elementos = lista.getElementByTagName('li');
+                
+                // 2. Referenciamos la lista correctamente
+                const lista = document.getElementById('lista'); 
+                
+                // 3. ¡Ojo aquí!: getElementsByTagName (con 's')
+                const elementos = lista.getElementsByTagName('li');
 
-
+                // 4. Recorremos y comparamos
                 for(let i = elementos.length - 1; i >= 0; i--){
-                    if (elementos[i].textContent == textoBuscado){
+                    if (elementos[i].textContent === textoBuscado){
                         lista.removeChild(elementos[i]);
                     }
                 }
+                
+                // Opcional: Limpiar el input para que quede listo para la próxima
+                document.getElementById('inputElemento').value = "";
             };
         </script>
     </body>
