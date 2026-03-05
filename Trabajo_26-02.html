@@ -3,7 +3,7 @@
         <title>Trabajo 26 de febrero</title>
     </head>
     <body>
-        <table border="1">
+        <table id="tabla" border="1">
             <tr>
                 <th>Número de control</th>
                 <th>Nombre</th>
@@ -47,5 +47,35 @@
                 <td>l26140337@queretaro.tecnm.mx</td>
             </tr>
         </table>
+        <br>
+        <button id="agregar">Agergar Fila</button>
+        <button id="eliminar">Eliminar Fila</button>
     </body>
+    <script>
+        document.getElementById('agregar').clickon = function (){
+            const tabla = document.getElementById('tabla');
+            const nuevaFila = tabla.insertRow(-1);
+            const celdaControl = nuevaFila.insertCell(0);
+            const celdaNombre = nuevaFila.insertCell(1);
+            const celdaApellidos = nuevaFila.insertCell(2);
+            const celdaCorreo = nuevaFila.insertCell(3);
+
+            celdaControl.textContent = "Nuevo ID";
+            celdaNombre.textContent = "Nuevo Nombre";
+            celdaApellidos.textContent = "Nuevo Apellido";
+            celdaCorreo.textContent = "nuevo@correo.com";
+        };
+
+        document.getElementById('eliminar').clickon = function (){
+            const tabla = document.getElementById('tabla');
+            const totalFilas = tabla.rows.length;
+
+            if(totalFilas > 1){
+                tabla.deleteRow(-1);
+            }
+            else{
+                alert("No hay más filas para eliminar");
+            }
+        };
+    </script>
 </html>
