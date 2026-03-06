@@ -99,7 +99,7 @@
                 </div>
                 <div class="apartado">
                     <label for="correo">Correo electrónico</label>
-                    <input type="text" id="Apellido" placeholder="Ejem: ejemplo@correo.com">
+                    <input type="text" id="Correo" placeholder="Ejem: ejemplo@correo.com">
                 </div>
             </form>
             <button id="registrarse">Registrarse</button>
@@ -107,7 +107,7 @@
         </div>
     </body>
     <script>
-        document.getElementById('agregar').onclick = function (){
+        document.getElementById('registrarse').onclick = function (){
             const tabla = document.getElementById('tabla');
             const nuevaFila = tabla.insertRow(-1);
             const celdaControl = nuevaFila.insertCell(0);
@@ -115,10 +115,14 @@
             const celdaApellidos = nuevaFila.insertCell(2);
             const celdaCorreo = nuevaFila.insertCell(3);
 
-            celdaControl.textContent = "Nuevo ID";
-            celdaNombre.textContent = "Nuevo Nombre";
-            celdaApellidos.textContent = "Nuevo Apellido";
-            celdaCorreo.textContent = "nuevo@correo.com";
+            //celdaControl.textContent = "Nuevo ID";
+            celdaControl.textContent = document.getElementById('nControl').textContent;
+            //celdaNombre.textContent = "Nuevo Nombre";
+            celdaNombre.textContent = document.getElementById('Nombre').textContent;
+            //celdaApellidos.textContent = "Nuevo Apellido";
+            celdaApellidos.textContent = document.getElementById('Apellido').textContent;
+            //celdaCorreo.textContent = "nuevo@correo.com";
+            celdaCorreo.textContent = document.getElementById('Correo').textContent;
         };
 
         document.getElementById('eliminar').onclick = function (){
