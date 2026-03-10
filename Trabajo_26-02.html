@@ -107,23 +107,38 @@
         </div>
     </body>
     <script>
-        document.getElementById('registrarse').onclick = function (){
+        document.getElementById('registrarse').onclick = function () {
             const tabla = document.getElementById('tabla');
+            
+            // Capturamos los valores de los inputs usando .value
+            const control = document.getElementById('nControl').value;
+            const nombre = document.getElementById('Nombre').value;
+            const apellido = document.getElementById('Apellido').value;
+            const correo = document.getElementById('Correo').value;
+
+            // Validación básica: si el nombre está vacío, no agregamos nada
+            if (nombre.trim() === "") {
+                alert("Por favor, ingresa al menos el nombre.");
+                return;
+            }
+
+            // Creamos la fila y las celdas
             const nuevaFila = tabla.insertRow(-1);
             const celdaControl = nuevaFila.insertCell(0);
             const celdaNombre = nuevaFila.insertCell(1);
             const celdaApellidos = nuevaFila.insertCell(2);
             const celdaCorreo = nuevaFila.insertCell(3);
 
-            //celdaControl.textContent = "Nuevo ID";
-            celdaControl.textContent = document.getElementById('nControl').textContent;
-            //celdaNombre.textContent = "Nuevo Nombre";
-            celdaNombre.textContent = document.getElementById('Nombre').textContent;
-            //celdaApellidos.textContent = "Nuevo Apellido";
-            celdaApellidos.textContent = document.getElementById('Apellido').textContent;
-            //celdaCorreo.textContent = "nuevo@correo.com";
-            celdaCorreo.textContent = document.getElementById('Correo').textContent;
+            // Asignamos los valores capturados a las celdas
+            celdaControl.textContent = control;
+            celdaNombre.textContent = nombre;
+            celdaApellidos.textContent = apellido;
+            celdaCorreo.textContent = correo;
+
+            // Opcional: Limpiar el formulario después de registrar
+            document.getElementById('formularioAlumno').reset();
         };
+
 
         document.getElementById('eliminar').onclick = function (){
             const tabla = document.getElementById('tabla');
