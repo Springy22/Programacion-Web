@@ -117,8 +117,8 @@
             const correo = document.getElementById('Correo').value;
 
             // Validación básica: si el nombre está vacío, no agregamos nada
-            if (nombre.trim() === "") {
-                alert("Por favor, ingresa al menos el nombre.");
+            if (nombre.trim() === "" && apellido.trim() === "") {
+                alert("Por favor, ingresa al menos el nombre y apellido.");
                 return;
             }
 
