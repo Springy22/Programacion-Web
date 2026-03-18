@@ -146,9 +146,10 @@
         document.getElementById('eliminar').onclick = function (){
             const tabla = document.getElementById('tabla');
             const totalFilas = tabla.rows.length;
+            const eliminar = document.getElementById('numeroEliminar');
 
             if(totalFilas > 1){
-                tabla.deleteRow(-1);
+                tabla.deleteRow(elimnar);
             }
             else{
                 alert("No hay más filas para eliminar");
