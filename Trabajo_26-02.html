@@ -143,10 +143,11 @@
         };
 
 
-        document.getElementById('eliminar').onclick = function (){
+        /*document.getElementById('eliminar').onclick = function (){
             const tabla = document.getElementById('tabla');
             const totalFilas = tabla.rows.length;
-            const eliminar = document.getElementById('numeroEliminar');
+            const inputFila = document.getElementById('numeroEliminar');
+            const indice = parseInt(inputFila.value);
 
             if(totalFilas > 1){
                 tabla.deleteRow(eliminar);
@@ -154,6 +155,21 @@
             else{
                 alert("No hay más filas para eliminar");
             }
+        };*/
+
+        document.getElementById('eliminar').onclick = function () {
+            const tabla = document.getElementById('tabla');
+            const inputFila = document.getElementById('numeroEliminar');
+            const indice = parseInt(inputFila.value);
+
+            if (isNaN(indice) || indice < 1 || indice >= tabla.rows.length) {
+                alert("Por favor, ingresa un número de fila válido (entre 1 y " + (tabla.rows.length - 1) + ")");
+            } 
+            else {
+                tabla.deleteRow(indice);
+                inputFila.value = "";
+            }
         };
+
     </script>
 </html>
