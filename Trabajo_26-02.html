@@ -123,8 +123,7 @@
     </body>
     <script>
         document.getElementById('registrarse').onclick = function () {
-            const tabla = document.getElementById('tabla');
-            
+            const tabla = document.getElementById('tabla');       
             const control = document.getElementById('nControl').value;
             const nombre = document.getElementById('Nombre').value;
             const apellido = document.getElementById('Apellido').value;
@@ -136,15 +135,20 @@
             }
 
             const nuevaFila = tabla.insertRow(-1);
-            const celdaControl = nuevaFila.insertCell(0);
-            const celdaNombre = nuevaFila.insertCell(1);
-            const celdaApellidos = nuevaFila.insertCell(2);
-            const celdaCorreo = nuevaFila.insertCell(3);
+            const numSiguiente = tabla.rows.length - 1;
+            
+            const celdaId = nuevaFila.insertCell(0); 
+            const celdaControl = nuevaFila.insertCell(1);
+            const celdaNombre = nuevaFila.insertCell(2);
+            const celdaApellidos = nuevaFila.insertCell(3);
+            const celdaCorreo = nuevaFila.insertCell(4);
 
+            celdaId.textContent = numSiguiente;
             celdaControl.textContent = control;
             celdaNombre.textContent = nombre;
             celdaApellidos.textContent = apellido;
-            celdaCorreo.textContent = correo;
+            celda
+            Correo.textContent = correo;
 
             document.getElementById('formularioAlumno').reset();
         };
@@ -160,6 +164,10 @@
             else {
                 tabla.deleteRow(indice);
                 inputFila.value = "";
+            }
+
+            for(let i = 1; i < tabla.rows.length; i++){
+                tabla.rows[i].cells[0].textContent = i;
             }
         };
 
