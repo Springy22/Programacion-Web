@@ -113,49 +113,29 @@
         document.getElementById('registrarse').onclick = function () {
             const tabla = document.getElementById('tabla');
             
-            // Capturamos los valores de los inputs usando .value
             const control = document.getElementById('nControl').value;
             const nombre = document.getElementById('Nombre').value;
             const apellido = document.getElementById('Apellido').value;
             const correo = document.getElementById('Correo').value;
 
-            // Validación básica: si el nombre está vacío, no agregamos nada
             if (control.trim() === "" || nombre.trim() === "" || apellido.trim() === "" || correo.trim() === "") {
                 alert("Por favor, ingrese todos los datos");
                 return;
             }
 
-            // Creamos la fila y las celdas
             const nuevaFila = tabla.insertRow(-1);
             const celdaControl = nuevaFila.insertCell(0);
             const celdaNombre = nuevaFila.insertCell(1);
             const celdaApellidos = nuevaFila.insertCell(2);
             const celdaCorreo = nuevaFila.insertCell(3);
 
-            // Asignamos los valores capturados a las celdas
             celdaControl.textContent = control;
             celdaNombre.textContent = nombre;
             celdaApellidos.textContent = apellido;
             celdaCorreo.textContent = correo;
 
-            // Opcional: Limpiar el formulario después de registrar
             document.getElementById('formularioAlumno').reset();
         };
-
-
-        /*document.getElementById('eliminar').onclick = function (){
-            const tabla = document.getElementById('tabla');
-            const totalFilas = tabla.rows.length;
-            const inputFila = document.getElementById('numeroEliminar');
-            const indice = parseInt(inputFila.value);
-
-            if(totalFilas > 1){
-                tabla.deleteRow(eliminar);
-            }
-            else{
-                alert("No hay más filas para eliminar");
-            }
-        };*/
 
         document.getElementById('eliminar').onclick = function () {
             const tabla = document.getElementById('tabla');
@@ -170,6 +150,10 @@
                 inputFila.value = "";
             }
         };
+
+        document.getElementById('cancelar').onclick = function (){
+            document.getElementById('formularioAlumno').reset();
+        }
 
     </script>
 </html>
